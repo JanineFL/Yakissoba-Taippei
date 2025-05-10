@@ -4,44 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+    <link rel="stylesheet" href="yakiconfig.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&family=Yuji+Boku&display=swap" rel="stylesheet">
     <title>Yakisoba Taippei</title>
 </head>
 <body>
     <header>
-     <center>
-        <button onclick="window.location='home.html' "> Home </button> 
-        <button onclick="window.location='cardapio.html' "> Cardápio </button> 
-        <button> Carrinho </button> 
-        <button> Pedidos </button> 
-        <button onclick="window.location='config.html' "> Configurações </button>
-     </center>
+        <div class="header-content">
+            <h1 class="titulo1">Yakisoba</h1>
+            <h1 class="titulo2">Taippei</h1>
+        </div>
     </header>
-    <center>
-    <main class="container">
-        <form>
-            <h1>Loguin Yakisoba Taippei</h1>
+    
+    <nav>
+        <button onclick="window.location.href='home.html'"><i class='bx bx-home'></i> Home</button>
+        <button onclick="window.location.href='cardapio.html'"><i class='bx bx-food-menu'></i> Cardápio</button>
+        <button><i class='bx bx-cart'></i> Carrinho</button>
+        <button><i class='bx bx-receipt'></i> Pedidos</button>
+        <button onclick="window.location.href='config.html'"><i class='bx bx-cog'></i> Config</button>
+    </nav>
+
+    <main class="login-container">
+        <form class="login-form">
+            <h2 class="login-title">Login Yakisoba Taippei</h2>
+            
             <div class="input-box">
-                <input placeholder="Usuario" type="email">
-                <i class="bx bxs-user"></i>
+                <i class='bx bxs-user'></i>
+                <input placeholder="Usuário" type="text" required>
             </div>
-             <div class="input-box">
-                <input placeholder="Senha" type="password">
-                 <i class="bx bxs-lock-alt"></i>
+            
+            <div class="input-box">
+                <i class='bx bxs-lock-alt'></i>
+                <input placeholder="Senha" type="password" required>
             </div>
-            <div class="remember-forgot">
-                <label>
-                     <input type="checkbox">
-                     Lembrar minha senha
+            
+            <div class="login-options">
+                <label class="remember-me">
+                    <input type="checkbox">
+                    Lembrar minha senha
                 </label>
-                <a href="#">Esqueci minha senha</a>
+                <a href="#" class="forgot-password">Esqueci minha senha</a>
             </div>
-            <button type="submit">Entrar</button>
+            
+            <button type="submit" class="login-btn">Entrar</button>
+            
             <div class="register-link">
-                <a href="#">Cadastre-se</a>
+                Não tem conta? <a href="#">Cadastre-se</a>
             </div>
         </form>
-
     </main>
-    </center>
 </body>
 </html>
