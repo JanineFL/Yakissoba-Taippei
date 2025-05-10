@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
     <title>Yakisoba Taippei</title>
 </head>
 <body>
@@ -15,11 +16,32 @@
         <button onclick="window.location='config.html' "> Configurações </button>
      </center>
     </header>
-    <main>
+    <center>
+    <main class="container">
+        <form>
+            <h1>Loguin Yakisoba Taippei</h1>
+            <div class="input-box">
+                <input placeholder="Usuario" type="email">
+                <i class="bx bxs-user"></i>
+            </div>
+             <div class="input-box">
+                <input placeholder="Senha" type="password">
+                 <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="remember-forgot">
+                <label>
+                     <input type="checkbox">
+                     Lembrar minha senha
+                </label>
+                <a href="#">Esqueci minha senha</a>
+            </div>
+            <button type="submit">Entrar</button>
+            <div class="register-link">
+                <a href="#">Cadastre-se</a>
+            </div>
+        </form>
 
-        <button> Entrar </button>
-        <button> Criar conta </button>
     </main>
-
+    </center>
 </body>
 </html>
