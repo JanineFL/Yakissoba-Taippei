@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Bahiana&family=Dongle&family=Playwrite+DE+Grund:wght@100..400&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;
+    background-color: #fbf8ee;
+}
+
+html {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+.cabecalho-imagem {
+    display: block;
+    margin: auto;
+    justify-content: center;
+}
+
+.divisoria {
+  border-top: 10px double #f7bf18;
+  margin: 30px 40px;
+  border-radius: 60px;
+}
+
+.cabecalho-menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: left;
+    gap: 5px;
+    position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 250px;
+  width: 40px;
+}
+
+.cabecalho-menu-item {
+    position: relative;
+    display: inline-flex;
+}
+
+.cabecalho-menu-item:hover{
+    transform: translate(-5px, -5px);
+    transition-delay: 200ms;
+}
+
+.cabecalho-menu-item-hidding {
+    display: none;
+    position:fixed;
+    min-width: 110px;
+    min-height: 23px;
+    background-color: #f7bf1854;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+        font-family: "Quicksand", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        font-style: normal;
+        transition-timing-function: ease-in 20s;
+}
+
+.cabecalho-menu-item:hover .cabecalho-menu-item-hidding {
+    display:block;
+    opacity: 2;
+    block-size: auto;
+    position: absolute;
+    justify-content:center;
+    bottom: 15px;
+    right: 39px; 
+    transition: 1s ease;
+
+}
+
+.fotoprato {
+    display: flex;
+    align-items: center;
+
+}
+
+.prato {
+  font-family: "Bahiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 55px;
+    color: #f7bf18;
+    padding: 0.5rem 5rem;
+}
+
+.pratos {
+  font-family: "Bahiana", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 35px;
+    color: #f7bf18;
+    padding: 0.5rem 5rem;
+}
+
+.descricao {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    padding: 0.5rem 5rem;
+}
+
+.vai {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    padding: 0.5rem 5rem;
+}
+
+.sabor {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    padding: 0.5rem 5rem;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+}
