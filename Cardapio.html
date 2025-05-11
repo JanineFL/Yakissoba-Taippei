@@ -3,182 +3,149 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" type="text/css" href="cardapio.css">
    <title>Yakisoba Taippei</title>
 </head>
 <body>
    <header>
-      
-   </header>
-      <main>
-      <nav>
-         <center>
-            <button onclick="window.location.href='home.html' "> Home </button>
-            <button onclick="window.location.href='cardapio.html' "> Cardápio </button>
-            <button> Carrinho </button>
-            <button> Pedidos </button>
-            <button onclick="window.location.href='config.html' "> Configurações </button>
+      <img class="cabecalho-imagem" src="https://i.postimg.cc/ydgZp8NM/logo.png" alt="Yakisoba Taippei" width="1500" height="312" >
 
+      <nav class="cabecalho-menu"> 
             
-         </center>
-      </nav>
-      <div>
-         <h2 class="prato">Yakisobas</h2>
-         <img class="fotoprato" src="https://img.freepik.com/fotos-gratis/composicao-saborosa-de-macarrao-de-alto-angulo-em-uma-mesa_23-2148803860.jpg?t=st=1746893341~exp=1746896941~hmac=8a75d58b4d939122539ac30cb95b1d4a0f9cf3c3b1baa243c40cb99de90f742b&w=740" alt="Yakisoba">
-         <h4 class="vai">
-            Macarrão (fabricação própria), verduras frescas: brócolis, repolho branco e roxo, mix de pimentões e molho da casa
-         </h4>
-         <h3 class="pratos"> Sabores </h3>
-         <h4 class="descricao">
-            Tradicional, Bovino, Frango, Lombo, Misto Simples, Misto com camarões, Vegetariano (Shimeji), Vegetarioano (Shimeji/Tofu), Sem Legumes
-         </h4>               
-         <h3 class="pratos"> Especiais </h3>
-         <h4 class="descricao">
-               Camarão, Tilápia
-         </h4>
-      </div>
-      <div>
-         <h2 class="prato"> Tempura </h2>
-         <h3 class="vai"> Acompanha molho de gengibre </h3>
-            <p class="pratos"> Sabores </p>
-         <h4 class="descricao">
-            Legumes, Camarão com Legumes
-         </h4>
+            <div class="cabecalho-menu-item">
+             <a> 
+               <span >
+                 <img src="https://i.postimg.cc/NMKr5jqN/home.png" alt="home" width="40px" height="40px" onclick="window.location.href='Home.html'">
+                </span>
+                <div class="cabecalho-menu-item-hidding">
+                    <p>Página Inicial</p>
+                </div>
+            </a>
+            </div>
+
+            <div>
+             <a class="cabecalho-menu-item">
+                <span>
+                  <img src="https://i.postimg.cc/xTDb1QsR/cardapio.png" alt="cardápio" wwidth="40px" height="40px" onclick="window.location.href='cardapio.html'">
+                </span>
+                <div class="cabecalho-menu-item-hidding">
+                <p>Cardápio</p>
+                </div>
+            </a>
+            </div>
+
+            <div>
+             <a class="cabecalho-menu-item">
+                <span>
+                    <img src="https://i.postimg.cc/L8vqD1mC/carrinho.png" alt="carrinho" width="40px" height="40px">
+                </span>
+                <div class="cabecalho-menu-item-hidding">
+                    <p>Carrinho</p>
+                </div>
+             </a>
+            </div>
+
+            <div>
+             <a class="cabecalho-menu-item">
+                <span>
+                   <img src="https://i.postimg.cc/rFjF227z/pedidos.png" alt="pedidos" width="40px" height="40px"> 
+                </span>
+                <div class="cabecalho-menu-item-hidding">
+                    <p>Pedidos</p>
+                </div>
+            </a>
+            </div>
+
+             <div>
+             <a class="cabecalho-menu-item">
+                <span>
+                    <img src="https://i.postimg.cc/NF4YtRJZ/conta.png" alt="conta" width="40px" height="40px" onclick="window.location.href='config.html'">
+                </span>
+                <div class="cabecalho-menu-item-hidding">
+                    <p>Conta</p>
+                </div>
+             </a> 
+            </div>
+        </nav>
+
+          <div class="divisoria"></div>
+
+   </header>
+
+      <main>
+         <section class="cardapio">
+            <h2 class="titulo"> Cardápio </h2>
+               <div class="box">
+                  <h2 class="prato">Yakisobas</h2>
+                     <a href="cardapio-yakisoba.html">
+                        <img class="fotoprato" src="https://img.freepik.com/fotos-gratis/composicao-saborosa-de-macarrao-de-alto-angulo-em-uma-mesa_23-2148803860.jpg?t=st=1746893341~exp=1746896941~hmac=8a75d58b4d939122539ac30cb95b1d4a0f9cf3c3b1baa243c40cb99de90f742b&w=740" alt="Yakisoba"  width="300px">
+                     </a>
+                  <h4 class="vai">
+                     Macarrão (fabricação própria), verduras frescas: brócolis, repolho branco e roxo, mix de pimentões e molho da casa.
+                  </h4>
+                  <h3 class="pratos"> Sabores </h3>
+                  <h4 class="descricao">
+                     Tradicional, Bovino, Frango, Lombo, Misto Simples, Misto com camarões, Vegetariano (Shimeji), Vegetarioano (Shimeji/Tofu), Sem Legumes.
+                  </h4>               
+                  <h3 class="pratos"> Especiais </h3>
+                  <h4 class="descricao">
+                        Camarão, Tilápia.
+                  </h4>
+               </div>
+
+               <div class="box">
+                  <h2 class="prato"> Tempura </h2>
+                     <img class="fotoprato" src="https://img.freepik.com/fotos-gratis/camarao-fritado-em-madeira_1339-7705.jpg?t=st=1746917536~exp=1746921136~hmac=da8eee348bea595ab302c6b8a4d019b5b0d98c93363b34eab051e84c928da4de&w=900" alt="Tempura"  width="600px">
+                  <h3 class="vai"> Acompanha molho de gengibre </h3>
+                  <p class="pratos"> Sabores </p>
+                  <h4 class="descricao">
+                     Legumes, Camarão com Legumes.
+                  </h4>
+               </div>
+
+               <div class="box">
+                  <h2 class="prato">Entradas/Gyoza</h2>
+                     <img class="fotoprato" src="https://img.freepik.com/fotos-gratis/gyoza-na-tabela_1232-2136.jpg?t=st=1746929829~exp=1746933429~hmac=ba35a61d9bf748bd30b9f04303b63913d425a24ff17027c53aa8a0c46a6f6795&w=900" alt="Entradas/Gyoza" width="90px">
+                  <h3 class="pratos"> Sabores</h3>
+                  <p class="descricao"> 
+                     Bovína, Suina, Legumes
+                  </p>
+               </div>
+         </section>
+         
+      </main>
+
+          <div class="divisoria"></div>
+
+      <main>
+         <section class="cardapio">
+            <h2 class="titulo"> Bebidas </h2>  
+               <div class="box">
+                  <h2 class="prato"> Bebidas </h2>
+                     <img class="fotoprato" src="https://img.freepik.com/fotos-gratis/cocktail-exotico-com-limao_181624-702.jpg?t=st=1746931710~exp=1746935310~hmac=c40c8c2f2b48c21a4bb496690f34f1b5feddc3e7bc820a6885613eb27d7c77e3&w=740" alt="Entradas/Gyoza" width="100px">
+                  <h3>
+
+                  </h3>
+               </div>
+
+               <div class="box">
+                  <h2 class="prato">Sucos Naturais</h2>
+                     <img class="fotoprato" src="https://img.freepik.com/fotos-gratis/suco-de-laranja-organico-espremido-na-hora_53876-32281.jpg?t=st=1746930572~exp=1746934172~hmac=9df265343309de228e2711ab21c50dbe56ccc028f06877d3a597f77943538fae&w=740" alt="Sucos Naturais" width="100px">
+                  <h3 class="pratos"> Sabores </h3>
+                  <h4 class="descricao">
+                     Açaí; Amora; Acerola; Caju; Maracujá; Morango; Tamarino; Graviola; Goiaba; Uva; Abacaxi; Abacaxi com hortelã.
+                  </h4>
+               </div>
+         </section>
+
+      </main>
          
       </div>
-      <div>
-         <h2 class="prato">Entradas/Gyoza</h2>
-         <h3 class="pratos"> Sabores</h3>
-         <p class="descricao"> <h4>
-            Bovína, Suina, Legumes
-         </h4></p>
-      </div>
-      <div>
-         <h2 class="prato"> Bebidas </h2>
-         <h3>
-
-         </h3>
-      </div>
-      <div>
-         <h2 class="prato">Sucos Naturais</h2>
-         <h3 class="pratos"> Sabores </h3>
-         <h4 class="descricao">
-            Açaí; Amora; Acerola; Caju; Maracujá; Morango; Tamarino; Graviola; Goiaba; Uva; Abacaxi; Abacaxi com hortelã.
-         </h4>
-      </div>
-      
-      <div>
-         
-      </div>
-      <div>
-         <!-- Parte 1: Cardápio de Yakissoba -->
-         <table>
-         <thead>
-            <tr>
-               <th class="selecao"> Escolha se tamanho </th>
-               <th class="tamanho"> P(500G) </th>
-               <th class="tamanho"> M(750G) </th>
-               <th class="tamanho"> G(1kg) </th>
-            </tr>
-         </thead>
-         <tbody>
-            <tr>
-               <td> Tradicional </td>
-               <td class="item" data-nome="Yakisoba Tradicional" data-preco="35.00"> 35.00 </td>
-               <td class="item" data-nome="Yakisoba Tradicional" data-preco="45.00"> 45.00 </td>
-               <td class="item" data-nome="Yakisoba Tradicional" data-preco="60.00"> 60.00 </td>
-            </tr>
-            <tr>
-               <td> Bovino </td>
-               <td class="item" data-nome="Yakisoba Bovino" data-preco="35.00" > 35.00 </td>
-               <td class="item" data-nome="Yakisoba Bovino" data-preco="45.00" > 45.00 </td>
-               <td class="item" data-nome="Yakisoba Bovino" data-preco="60.00"> 60.00 </td>
-            </tr>
-            <tr>
-               <td> Frango </td>
-               <td> 35.00 </td>
-               <td> 45.00 </td>
-               <td> 60.00 </td>
-            </tr>
-            <tr>
-               <td> Lombo </td>
-               <td> 35.00 </td>
-               <td> 45.00 </td>
-               <td> 60.00 </td>
-            </tr>
-            <tr>
-               <td> Misto Simples </td>
-               <td> 35.00 </td>
-               <td> 45.00 </td>
-               <td> 60.00 </td>
-            </tr>
-            <tr>
-               <td> Misto com camarões</td>
-               <td> 47.00 </td>
-               <td> 55.00 </td>
-               <td> 68.00 </td>
-            </tr>
-            <tr>
-               <td> Vegetariano</td>
-               <td> 35.00 </td>
-               <td> 45.00 </td>
-               <td> 60.00 </td>
-            </tr>
-            <tr>
-               <td> Vegano </td>
-               <td> 35.00 </td>
-               <td> 45.00 </td>
-               <td> 60.00 </td>
-            </tr>
-            <tr>
-               <td> Sem Legumes</td>
-               <td> 38.00 </td>
-               <td> 48.00 </td>
-               <td> 62.00 </td>
-            </tr>
-            <tr>
-               <td> Camarão </td>
-               <td> 50.00 </td>
-               <td> 68.00 </td>
-               <td> 80.00 </td>
-            </tr>
-            <tr>
-               <td> Tilápia </td>
-               <td> 45.00 </td>
-               <td> 55.00 </td>
-               <td> 68.00 </td>
-            </tr>
-
-
-
-                
-
-
-
-              </tbody>
-              <tfoot>
-                  
-              </tfoot>
-          </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       </div>
- 
-
-
 
    </main>
+
    <footer>
       <center>
          <h5> Se Beber não dirija!</h5>
