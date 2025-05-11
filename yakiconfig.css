@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bahiana&display=swap');
+
 :root {
     --amarelo-principal: #F7C948;
     --preto-forte: #000000;
@@ -14,109 +16,117 @@
     --espaco-medio: 1.5rem;
     --espaco-g: 2rem;
     --espaco-gg: 3rem;
-
-    --fonte-artistica: 'Yuji Boku', serif;
-    --fonte-titulos: 'Zen Maru Gothic', sans-serif;
-    --fonte-corpo: 'Zen Maru Gothic', sans-serif;
 }
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 body {
-    font-family: var(--fonte-corpo);
-    background-color: var(--fundo-pagina);
-    color: var(--texto-principal);
-    line-height: 1.6;
-    min-height: 100vh;
+    font-size: 100%;
+    background-color: #fbf8ee;
+}
+
+html {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.cabecalho-imagem {
+    display: block;
+    margin: auto;
+    justify-content: center;
+}
+
+.divisoria {
+  border-top: 10px double #f7bf18;
+  margin: 30px 40px;
+  border-radius: 60px;
+}
+
+.cabecalho-menu {
     display: flex;
     flex-direction: column;
-}
-
-header {
-    background: var(--preto-forte);
-    padding: var(--espaco-gg) var(--espaco-p);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.header-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.titulo1, .titulo2 {
-    font-family: var(--fonte-titulos);
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--amarelo-principal);
-    display: inline-block;
-    margin: 0 var(--espaco-pp);
-    position: relative;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-.titulo1::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--amarelo-principal);
-    transform: skewX(-15deg);
-}
-
-.titulo2::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--amarelo-principal);
-    transform: skewX(15deg);
-}
-nav {
-    background: var(--amarelo-principal);
-    padding: var(--espaco-p);
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: var(--espaco-p);
-    border-bottom: 3px solid var(--preto-forte);
+    margin: auto;
+    justify-content: left;
+    gap: 5px;
+    position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 250px;
+  width: 40px;
 }
 
-nav button {
-    background: var(--preto-forte);
-    color: var(--amarelo-principal);
-    border: none;
-    padding: var(--espaco-pp) var(--espaco-medio);
+.cabecalho-menu-item {
+    position: relative;
+    display: inline-flex;
+}
+
+.cabecalho-menu-item:hover{
+    transform: translate(-5px, -5px);
+    transition-delay: 200ms;
+}
+
+.cabecalho-menu-item-hidding {
+    display: none;
+    position:fixed;
+    min-width: 110px;
+    min-height: 23px;
+    background-color: #f7bf1854;
+    width: 150px;
+    height: 50px;
+   padding: 0.3rem;
     border-radius: 50px;
-    font-family: var(--fonte-artistica);
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: var(--transicao-artistica);
+        font-family: "Quicksand", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        font-style: normal;
+         text-align: center;
+        transition-timing-function: ease-in 20s;
+}
+
+.cabecalho-menu-item:hover .cabecalho-menu-item-hidding {
+    display:block;
+    opacity: 2;
+    block-size: auto;
+    position: absolute;
+    justify-content:center;
+    bottom: 15px;
+    right: 39px; 
+    transition: 1s ease;
+
+}
+
+main {
+   margin: 2rem;
     display: flex;
-    align-items: center;
-    gap: var(--espaco-pp);
-    box-shadow: var(--sombra-artistica);
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:center;
+    align-content:center;
+    text-align: left;
 }
 
-nav button:hover {
-    transform: translateY(-3px);
-    background: var(--laranja-suave);
-    color: var(--preto-forte);
+.cardapio {
+    zoom: 0.9;
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+
 }
 
-nav button i {
-    font-size: 1.2rem;
-}
+
+
+/* Login Conteiner */
 
 .login-container {
     flex: 1;
@@ -137,11 +147,11 @@ nav button i {
 }
 
 .login-title {
-    font-family: var(--fonte-titulos);
+    font-family: "Bahiana", sans-serif;
     color: var(--preto-forte);
     text-align: center;
     margin-bottom: var(--espaco-g);
-    font-size: 1.8rem;
+    font-size: 50px;
     position: relative;
 }
 
@@ -158,11 +168,14 @@ nav button i {
 
 .input-box {
     position: relative;
+    font-family: "Bahiana", sans-serif;
+    font-size: 20px;
     margin-bottom: var(--espaco-medio);
 }
 
 .input-box i {
     position: absolute;
+    font-family: "Bahiana", sans-serif;
     left: var(--espaco-p);
     top: 50%;
     transform: translateY(-50%);
@@ -174,8 +187,8 @@ nav button i {
     padding: var(--espaco-p) var(--espaco-p) var(--espaco-p) calc(var(--espaco-p) * 2.5);
     border: 1px solid var(--cinza-claro);
     border-radius: 5px;
-    font-family: var(--fonte-corpo);
-    font-size: 1rem;
+    font-family: "Bahiana", sans-serif;
+    font-size: 25px;
     transition: var(--transicao-artistica);
 }
 
@@ -216,8 +229,8 @@ nav button i {
     color: white;
     border: none;
     border-radius: 5px;
-    font-family: var(--fonte-artistica);
-    font-size: 1.1rem;
+    font-family: "Bahiana", sans-serif;
+    font-size: 40px;    
     cursor: pointer;
     transition: var(--transicao-artistica);
     margin-bottom: var(--espaco-medio);
@@ -243,26 +256,4 @@ nav button i {
 
 .register-link a:hover {
     color: var(--laranja-suave);
-}
-
-
-@media (max-width: 768px) {
-    .titulo1, .titulo2 {
-        font-size: 2rem;
-        display: block;
-        margin: var(--espaco-pp) auto;
-    }
-    
-    nav {
-        gap: var(--espaco-pp);
-    }
-    
-    nav button {
-        font-size: 0.9rem;
-        padding: var(--espaco-pp) var(--espaco-p);
-    }
-    
-    .login-title {
-        font-size: 1.5rem;
-    }
 }

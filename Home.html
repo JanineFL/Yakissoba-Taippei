@@ -3,55 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Aladin&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
     <link rel="stylesheet" href="home.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    
-
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&family=Yuji+Boku&display=swap" rel="stylesheet">
     <title>Yakisoba Taippei</title>
-    
-   
 </head>
 <body>
-    <header>
-        <center>
-        <h1 class = "titulo1">Yakisoba</h1>
-        <h1 class = "titulo2"> Taippei </h1>
-        </center>
-    </header>
-    <main>
-        <nav>
-            <center>  
-                <button onclick="window.location.href='home.html' "> Home </button>              
-                <button onclick="window.location.href='cardapio.html' "> Cardápio </button>
-                <button> Carrinho </button>
-                <button> Pedidos </button>
-                <button onclick="window.location.href='config.html' "> Configurações </button>
+   <header>
+         <img class="cabecalho-imagem" src="https://i.postimg.cc/ydgZp8NM/logo.png" alt="Yakisoba Taippei" width="1500" height="312" >
+            <nav class="cabecalho-menu"> 
+            
+            <div class="cabecalho-menu-item">
+             <a> 
+               <span >
+                 <img src="https://i.postimg.cc/NMKr5jqN/home.png" alt="home" width="40px" height="40px">
+                </span>
+                <div class="cabecalho-menu-item-hidding">
+                    <p>Página Inicial</p>
+                </div>
+            </a>
+            </div>
 
+            <div>
+             <a class="cabecalho-menu-item">
+                <span>
+                  <img src="https://i.postimg.cc/xTDb1QsR/cardapio.png" alt="cardápio" wwidth="40px" height="40px" onclick="window.location.href='cardapio.html'">
+                </span>
+                <div class="cabecalho-menu-item-hidding">
+                <p>Cardápio</p>
+                </div>
+            </a>
+            </div>
 
-                
-            </center>
+            <div>
+             <a class="cabecalho-menu-item">
+                <span>
+                    <img src="https://i.postimg.cc/L8vqD1mC/carrinho.png" alt="carrinho" width="40px" height="40px">
+                </span>
+                <div class="cabecalho-menu-item-hidding">
+                    <p>Carrinho</p>
+                </div>
+             </a>
+            </div>
+
+            <div>
+             <a class="cabecalho-menu-item">
+                <span>
+                   <img src="https://i.postimg.cc/rFjF227z/pedidos.png" alt="pedidos" width="40px" height="40px"> 
+                </span>
+                <div class="cabecalho-menu-item-hidding">
+                    <p>Pedidos</p>
+                </div>
+            </a>
+            </div>
+
+            <div>
+             <a class="cabecalho-menu-item">
+                <span>
+                    <img src="https://i.postimg.cc/NF4YtRJZ/conta.png" alt="conta" width="40px" height="40px">
+                </span>
+                <div class="cabecalho-menu-item-hidding">
+                    <p>Conta</p>
+                </div>
+             </a> 
+            </div>
         </nav>
-        <section>
-        <h2> Quem Somos? </h2>
-        <h4>
-            texto temporário.
-        </h4>
-        </section>
-        <section>
-            <h3> Venha nos conhecer</h3>
-            <h4>
-                R.C-131, n° 485 - Jardim América, Goiânia - GO
-            </h4>
-            <h3> Horário de funcionamento</h3>
-            <h4> Segunda-Feira / Sexta-Feira    18:00-02:00 
-                <p> 
-                    Sábado    11:00-14:15 / 18:00-03:00  </p>
-                <p> Domingo    11:00-14:15 / 18:00-02:00 </p>
-            </h4>
-            </section>
+
+          <div class="divisoria"></div>
+   </header>
+
+        <section class="box-home">
+    <h2>Quem Somos?</h2>
+    <h4>Somos um restaurante especializado em Yakisobas artesanais, combinando tradição oriental com ingredientes frescos e regionais.</h4>
+</section>
+
+<section class="box-home">
+    <h3>Venha nos conhecer</h3>
+    <h4>R.C-131, n° 485 - Jardim América, Goiânia - GO</h4>
+
+    <h3>Horário de funcionamento</h3>
+    <h4>Segunda a Sexta: 18:00 - 02:00</h4>
+    <h4>Sábado: 11:00 - 14:15 / 18:00 - 03:00</h4>
+    <h4>Domingo: 11:00 - 14:15 / 18:00 - 02:00</h4>
+</section>
+
     </main>
     <footer>
         <center>
