@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bahiana&display=swap');
+
 :root {
     --amarelo-principal: #F7C948;
     --preto-forte: #000000;
@@ -15,8 +17,6 @@
     --espaco-g: 2rem;
     --espaco-gg: 3rem;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Bahiana&family=Dongle&family=Playwrite+DE+Grund:wght@100..400&family=Quicksand:wght@300..700&display=swap');
 
 * {
     margin: 0;
@@ -147,11 +147,11 @@ main {
 }
 
 .login-title {
-    font-family: var(--fonte-titulos);
+    font-family: "Bahiana", sans-serif;
     color: var(--preto-forte);
     text-align: center;
     margin-bottom: var(--espaco-g);
-    font-size: 1.8rem;
+    font-size: 50px;
     position: relative;
 }
 
@@ -168,11 +168,14 @@ main {
 
 .input-box {
     position: relative;
+    font-family: "Bahiana", sans-serif;
+    font-size: 20px;
     margin-bottom: var(--espaco-medio);
 }
 
 .input-box i {
     position: absolute;
+    font-family: "Bahiana", sans-serif;
     left: var(--espaco-p);
     top: 50%;
     transform: translateY(-50%);
@@ -184,8 +187,8 @@ main {
     padding: var(--espaco-p) var(--espaco-p) var(--espaco-p) calc(var(--espaco-p) * 2.5);
     border: 1px solid var(--cinza-claro);
     border-radius: 5px;
-    font-family: var(--fonte-corpo);
-    font-size: 1rem;
+    font-family: "Bahiana", sans-serif;
+    font-size: 25px;
     transition: var(--transicao-artistica);
 }
 
@@ -226,8 +229,8 @@ main {
     color: white;
     border: none;
     border-radius: 5px;
-    font-family: var(--fonte-artistica);
-    font-size: 1.1rem;
+    font-family: "Bahiana", sans-serif;
+    font-size: 40px;    
     cursor: pointer;
     transition: var(--transicao-artistica);
     margin-bottom: var(--espaco-medio);
@@ -253,26 +256,4 @@ main {
 
 .register-link a:hover {
     color: var(--laranja-suave);
-}
-
-
-@media (max-width: 768px) {
-    .titulo1, .titulo2 {
-        font-size: 2rem;
-        display: block;
-        margin: var(--espaco-pp) auto;
-    }
-    
-    nav {
-        gap: var(--espaco-pp);
-    }
-    
-    nav button {
-        font-size: 0.9rem;
-        padding: var(--espaco-pp) var(--espaco-p);
-    }
-    
-    .login-title {
-        font-size: 1.5rem;
-    }
 }
