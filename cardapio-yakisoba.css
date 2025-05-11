@@ -1,105 +1,236 @@
 @import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Bahiana&family=Dongle&family=Playwrite+DE+Grund:wght@100..400&family=Quicksand:wght@300..700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
+/*head*/
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
 
-body {
-    background-color: #fbf8ee;
+    body {
+        background-color: #fbf8ee;
 
-}
+    }
 
 
-html {
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-}
-.cabecalho-imagem {
-    display: block;
-    margin: auto;
-    justify-content: center;
-}
-
-.divisoria {
-  border-top: 10px double #f7bf18;
-  margin: 30px 40px;
-  border-radius: 60px;
-}
-
-.cabecalho-menu {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: auto;
-    justify-content: left;
-    gap: 5px;
-    position: fixed;
-  bottom: 0;
-  right: 0;
-  top: 250px;
-  width: 40px;
-}
-
-.cabecalho-menu-item {
-    position: relative;
-    display: inline-flex;
-}
-
-.cabecalho-menu-item:hover{
-    transform: translate(-5px, -5px);
-    transition-delay: 200ms;
-}
-
-.cabecalho-menu-item-hidding {
-    display: none;
-    position:fixed;
-    min-width: 110px;
-    min-height: 23px;
-    background-color: #f7bf1854;
-    width: 150px;
-    height: 50px;
-    border-radius: 50px;
+    html {
         font-family: "Quicksand", sans-serif;
-        font-size: 15px;
-        font-weight: 500;
+        font-optical-sizing: auto;
+        font-weight: 300;
         font-style: normal;
-        transition-timing-function: ease-in 20s;
-}
+    }
+    .cabecalho-imagem {
+        display: block;
+        margin: auto;
+        justify-content: center;
+    }
 
-.cabecalho-menu-item:hover .cabecalho-menu-item-hidding {
-    display:block;
-    opacity: 2;
-    block-size: auto;
-    position: absolute;
-    justify-content:center;
-    bottom: 15px;
-    right: 39px; 
-    transition: 1s ease;
+    .divisoria {
+    border-top: 10px double #f7bf18;
+    margin: 30px 40px;
+    border-radius: 60px;
+    }
 
-}
+    .cabecalho-menu {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: left;
+        gap: 5px;
+        position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 250px;
+    width: 40px;
+    }
 
-footer {
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
+    .cabecalho-menu-item {
+        position: relative;
+        display: inline-flex;
+    }
+
+    .cabecalho-menu-item:hover{
+        transform: translate(-5px, -5px);
+        transition-delay: 200ms;
+    }
+
+    .cabecalho-menu-item-hidding {
+        display: none;
+        position:fixed;
+        min-width: 110px;
+        min-height: 23px;
+        background-color: #f7bf1854;
+        width: 150px;
+        height: 50px;
+        border-radius: 50px;
+            font-family: "Quicksand", sans-serif;
+            font-size: 15px;
+            font-weight: 500;
+            font-style: normal;
+            transition-timing-function: ease-in 20s;
+    }
+
+    .cabecalho-menu-item:hover .cabecalho-menu-item-hidding {
+        display:block;
+        opacity: 2;
+        block-size: auto;
+        position: absolute;
+        justify-content:center;
+        bottom: 15px;
+        right: 39px; 
+        transition: 1s ease;
+
+    }
+/*head*/
+
+/*body*/
+    .titulo {
+    font-family: "Bahiana", sans-serif;
+    font-weight: 400;
     font-style: normal;
-    font-size: 20px;
-    color: #fbf8ee;
-    padding: 0.2rem;
-    display: flex;
+    font-size: 50px;
+    letter-spacing: 0.5em;
+    color: #f7bf18;
+    padding: 0.5rem 1rem;
+    text-align: center; 
+    display:flex;
     flex-direction: row;
     justify-content: center;
+    }
+
+    main {
+        display: inline;
+        justify-content: center;
+    }
+
+    section {
+    zoom: 1.0;
+    display: inline;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items:flex-start;
+    gap: 0.5rem;
+    }
+
+    .box {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    margin: 0.5rem 10rem;
+    }
+
+    .fotoprato {
+    float: left;
+    width: 300px;
+    border-radius: 20px;
+    display: inline;
+    position: relative;
+    }
+
+    .tx {
+    position: absolute;
+    bottom: 10px;
+    left: 13rem;
+    font-size: 10px;
+    background: #f7bf1879;
+    border-radius: 10px;
+    padding: 5px;
+    }
+    table {
+    width: 90%;
+    text-align: center;
+    }
+
+    .tb {
+    width: 150%;
+    padding: 2rem;
     align-content: center;
-    width: 1500px;
-  height: 150px;
-  border-radius: 1px;
-  background-color: black;
-  padding: 1em;
-  margin: auto;
-  line-height: 40px;
-}
+    margin-left: 25rem;
+    display: grid;
+    grid-template-columns: repeat(8, 3fr);
+    line-height: 3rem;
+    margin-bottom: 3rem;
+    }
+
+    tr, td{
+        border: 2px solid black;  
+    }
+
+    .especiais {
+    font-family: "Bahiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    color:#f7bf18 ;
+    padding: 2rem 2rem;
+    background-color: black;
+    text-align: center;
+    grid-row: span 2 ;
+    letter-spacing: 10px;
+    }
+
+    .prato {
+    font-size: 20px;
+    font-weight: 550;
+    padding: 0.0rem 0.5rem;
+    text-align: left;
+    }
+
+    .preco {
+    font-family: "Bahiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color:#f7bf18;
+    font-weight: 560;
+    padding: 0.0rem 0.9rem;
+    text-align: center;
+    }
+
+    .preco2 {
+    font-family: "Bahiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color:#f7bf18;
+    font-weight: 560;
+    padding: 0.0rem 7rem;
+    text-align: center; 
+    }
+
+    .tamanho {
+    padding: 0.5rem 5rem;
+    background-color: black;
+    color: #fbf8ee;
+    font-size: 20px;
+    font-weight: 90%;
+    letter-spacing: 0.4rem;
+    width: 60%;
+    }
+/*body*/
+
+/*foot*/
+    footer {
+        font-family: "Quicksand", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 20px;
+        color: #fbf8ee;
+        padding: 0.2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        width: 1500px;
+    height: 150px;
+    border-radius: 1px;
+    background-color: black;
+    padding: 1em;
+    margin: auto;
+    line-height: 40px;
+    }
+/*foot*/
