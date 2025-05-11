@@ -202,10 +202,20 @@ footer {
     justify-content: center;
     align-content: center;
     width: 1500px;
-  height: 150px;
-  border-radius: 1px;
-  background-color: black;
-  padding: 1em;
-  margin: auto;
-  line-height: 40px;
+height: 100px;
+border-radius: 1px;
+background-color: black;
+padding: 1em;
+margin: auto;
+line-height: 30px;
+margin-bottom: 5px;
+}
+
+.sb {
+    font-family: "Bahiana", sans-serif;
+    color: #f7bf18;
+    letter-spacing: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    margin-bottom: 10px;
 }
