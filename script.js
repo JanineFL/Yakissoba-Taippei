@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Lista de pratos
-  const pratos = [];
+  const pratos = [???];
 
   // Adicionar pratos ao HTML
   pratos.forEach((prato, i) => {
