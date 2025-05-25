@@ -74,3 +74,58 @@ app.post('/login', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
+
+const nodemailer = require('nodemailer');
+
+app.post('/esqueci-senha', (req, res) => {
+  const { email } = req.body;
+  const dbPath = path.join(__dirname, 'banco-de-dados', 'db.json');
+
+  fs.readFile(dbPath, 'utf8', (err, data) => {
+    if (err) return res.status(500).json({ erro: 'Erro ao acessar o banco de dados.' });
+
+    let usuarios = [];
+    try {
+      usuarios = JSON.parse(data);
+    } catch {
+      usuarios = [];
+    }
+
+    const usuario = usuarios.find(u => u.email === email);
+    if (!usuario) {
+      return res.status(404).json({ erro: 'Email não cadastrado.' });
+    }
+
+    const novaSenha = Math.random().toString(36).slice(-8);
+    usuario.senha = novaSenha;
+
+    fs.writeFile(dbPath, JSON.stringify(usuarios, null, 2), err => {
+      if (err) return res.status(500).json({ erro: 'Erro ao atualizar senha.' });
+
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'yakisobasuporte0@gmail.com',
+          pass: 'aozk slsx vyih hoiq' // senha de app, gerada no Google
+        }
+      });
+
+      const mailOptions = {
+        from: 'yakisobasuporte0@gmail.com',
+        to: email,
+        subject: 'Recuperação de senha - Yakisoba Taippei',
+        text: `Olá! Sua nova senha é: ${novaSenha}`
+      };
+
+      transporter.sendMail(mailOptions, (erro, info) => {
+        if (erro) {
+          console.error("Erro ao enviar email:", erro);
+          return res.status(500).json({ erro: 'Erro ao enviar email.' });
+        }
+
+        console.log("Email enviado:", info.response);
+        res.status(200).json({ mensagem: 'Email enviado com sucesso!' });
+      });
+    });
+  });
+});

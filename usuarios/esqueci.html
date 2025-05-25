@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recuperar senha</title>
+</head>
+<body>
+  <h2>Recuperar senha</h2>
+  <input id="email" type="email" placeholder="Digite seu e-mail">
+  <button onclick="recuperar()">Enviar nova senha</button>
+
+  <script>
+    function recuperar() {
+      const email = document.getElementById("email").value;
+
+      if (!email) {
+        alert("Digite seu e-mail.");
+        return;
+      }
+
+      fetch("/esqueci-senha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.erro) {
+            alert(data.erro);
+          } else {
+            alert("Email enviado com sucesso!");
+            window.location.href = "config.html"; // volta pro login
+          }
+        })
+        .catch(err => {
+          console.error("Erro ao conectar:", err);
+          alert("Erro de conexão com o servidor.");
+        });
+    }
+  </script>
+</body>
+</html>
