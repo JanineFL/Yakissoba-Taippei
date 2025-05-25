@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "name": "yakissoba-taippei",
+  "version": "1.0.0",
+  "description": "Olá",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JanineFL/Yakissoba-Taippei.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JanineFL/Yakissoba-Taippei/issues"
+  },
+  "homepage": "https://github.com/JanineFL/Yakissoba-Taippei#readme"
+}
