@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="carrinho.css">
+    <title>Yakisoba Taippei - Carrinho</title>
+</head>
+
+<body>
+    <header>
+        <img class="cabecalho-imagem" src="https://i.postimg.cc/ydgZp8NM/logo.png" alt="Yakisoba Taippei" width="1500" height="312">
+        <nav class="cabecalho-menu">
+
+            <div class="cabecalho-menu-item">
+                <a href="index.html">
+                    <span>
+                        <img src="https://i.postimg.cc/NMKr5jqN/home.png" alt="home" width="40px" height="40px">
+                    </span>
+                    <div class="cabecalho-menu-item-hidding">
+                        <p>Página Inicial</p>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <a class="cabecalho-menu-item" href="cardapio.html">
+                    <span>
+                        <img src="https://i.postimg.cc/xTDb1QsR/cardapio.png" alt="cardápio" width="40px" height="40px">
+                    </span>
+                    <div class="cabecalho-menu-item-hidding">
+                        <p>Cardápio</p>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <a class="cabecalho-menu-item" href="carrinho.html">
+                    <span>
+                        <img src="https://i.postimg.cc/L8vqD1mC/carrinho.png" alt="carrinho" width="40px" height="40px">
+                    </span>
+                    <div class="cabecalho-menu-item-hidding">
+                        <p>Carrinho</p>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <a class="cabecalho-menu-item" href="pedidos.html">
+                    <span>
+                        <img src="https://i.postimg.cc/rFjF227z/pedidos.png" alt="pedidos" width="40px" height="40px">
+                    </span>
+                    <div class="cabecalho-menu-item-hidding">
+                        <p>Pedidos</p>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <a class="cabecalho-menu-item" href="conta.html">
+                    <span>
+                        <img src="https://i.postimg.cc/NF4YtRJZ/conta.png" alt="conta" width="40px" height="40px">
+                    </span>
+                    <div class="cabecalho-menu-item-hidding">
+                        <p>Conta</p>
+                    </div>
+                </a>
+            </div>
+        </nav>
+        <div class="divisoria"></div>
+    </header>
+
+        <div class="carrinho" id="carrinho"></div>
+
+    <footer>
+        <center>
+            <h5> Se Beber não dirija!</h5>
+            <p>
+            <h6>Todos os direitos reservados</h6>
+            </p>
+        </center>
+    </footer>
+<script>
+const taxaEntrega = 10.00;
+const carrinhoItens = JSON.parse(localStorage.getItem("pedido")) || [];
+
+function renderCarrinho() {
+  if (carrinhoItens.length === 0) {
+    document.getElementById("carrinho").innerHTML = `
+      <div class="carrinho-vazio">
+        Nenhum pedido no carrinho
+      </div>
+    `;
+    return;
+  }
+
+  let total = taxaEntrega;
+  let html = "";
+
+  carrinhoItens.forEach((item, index) => {
+    let subtotal = item.value * item.quantity;
+    total += subtotal;
+
+    html += `
+      <div class="item">
+        <div class="left-item">
+            <img src="${item.imagem}" alt="${item.nome}">
+            <div class="detalhes">
+            <div class="titulo">${item.nome}</div>
+            <p>Tamanho ${item.tamanho}</p>
+        </div>
+        </div>
+        <div class="right-item">
+            <div class="buttonRemoveDiv"><button class="btnRemover" onclick="removerItem(${index})"></button></div>
+            <div class="quantidade">
+            Quantidade
+            <button class="btnQtd" onclick="alterarQtd(${index}, -1)">-</button>
+            ${item.quantity.toString().padStart(2, '0')}
+            <button class="btnQtd" onclick="alterarQtd(${index}, 1)">+</button>
+          </div>
+            <div class="preco">R$ ${subtotal.toFixed(2)}</div>
+        </div>
+      </div>
+    `;
+  });
+
+  html += `
+    <div class="resumo">
+      <div class="linha">
+        <span>TAXA DE ENTREGA</span>
+        <span>R$ ${taxaEntrega.toFixed(2)}</span>
+      </div>
+      <div class="total">TOTAL R$ ${total.toFixed(2)}</div>
+      <div class="avaliar">AVALIAR</div>
+    </div>
+  `;
+
+  document.getElementById("carrinho").innerHTML = html;
+}
+function alterarQtd(index, delta) {
+  if (carrinhoItens[index].quantity == 0 && delta == -1) {
+    carrinhoItens[index].quantity = 0;
+    return;
+  }
+  carrinhoItens[index].quantity += delta;
+
+  if (carrinhoItens[index].quantity <= 0) {
+    removerItem(index);
+    return;
+  }
+
+  localStorage.setItem("pedido", JSON.stringify(carrinhoItens));
+  renderCarrinho();
+}
+
+function removerItem(index) {
+  carrinhoItens.splice(index, 1); 
+  localStorage.setItem("pedido", JSON.stringify(carrinhoItens)); 
+  renderCarrinho(); 
+}
+
+renderCarrinho();
+</script>
+
+</body>
+
+</html>

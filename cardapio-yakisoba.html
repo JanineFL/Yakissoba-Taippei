@@ -1,188 +1,218 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" type="text/css" href="cardapio-yakisoba.css">
-   <title>Yakisoba Taippei</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="cardapio-yakisoba.css">
+    <title>Yakisoba Taippei</title>
 </head>
+
 <body>
-   <header>
-         <img class="cabecalho-imagem" src="https://i.postimg.cc/ydgZp8NM/logo.png" alt="Yakisoba Taippei" width="1500" height="312" >
-            <nav class="cabecalho-menu"> 
-            
+    <header>
+        <img class="cabecalho-imagem" src="https://i.postimg.cc/ydgZp8NM/logo.png" alt="Yakisoba Taippei" width="1500"
+            height="312">
+        <nav class="cabecalho-menu">
+
             <div class="cabecalho-menu-item">
-             <a> 
-               <span >
-                 <img src="https://i.postimg.cc/NMKr5jqN/home.png" alt="home" width="40px" height="40px">
-                </span>
-                <div class="cabecalho-menu-item-hidding">
-                    <p>Página Inicial</p>
-                </div>
-            </a>
+                <a>
+                    <span>
+                        <img src="https://i.postimg.cc/NMKr5jqN/home.png" alt="home" width="40px" height="40px">
+                    </span>
+                    <div class="cabecalho-menu-item-hidding">
+                        <p>Página Inicial</p>
+                    </div>
+                </a>
             </div>
 
             <div>
-             <a class="cabecalho-menu-item">
-                <span>
-                  <img src="https://i.postimg.cc/xTDb1QsR/cardapio.png" alt="cardápio" wwidth="40px" height="40px" onclick="window.location.href='cardapio.html'">
-                </span>
-                <div class="cabecalho-menu-item-hidding">
-                <p>Cardápio</p>
-                </div>
-            </a>
+                <a class="cabecalho-menu-item">
+                    <span>
+                        <img src="https://i.postimg.cc/xTDb1QsR/cardapio.png" alt="cardápio" wwidth="40px" height="40px"
+                            onclick="window.location.href='cardapio.html'">
+                    </span>
+                    <div class="cabecalho-menu-item-hidding">
+                        <p>Cardápio</p>
+                    </div>
+                </a>
             </div>
 
             <div>
-             <a class="cabecalho-menu-item">
-                <span>
-                    <img src="https://i.postimg.cc/L8vqD1mC/carrinho.png" alt="carrinho" width="40px" height="40px">
-                </span>
-                <div class="cabecalho-menu-item-hidding">
-                    <p>Carrinho</p>
-                </div>
-             </a>
+                <a class="cabecalho-menu-item" href="carrinho.html">
+                    <span>
+                        <img src="https://i.postimg.cc/L8vqD1mC/carrinho.png" alt="carrinho" width="40px" height="40px">
+                    </span>
+                    <div class="cabecalho-menu-item-hidding">
+                        <p>Carrinho</p>
+                    </div>
+                </a>
             </div>
 
             <div>
-             <a class="cabecalho-menu-item">
-                <span>
-                   <img src="https://i.postimg.cc/rFjF227z/pedidos.png" alt="pedidos" width="40px" height="40px"> 
-                </span>
-                <div class="cabecalho-menu-item-hidding">
-                    <p>Pedidos</p>
-                </div>
-            </a>
+                <a class="cabecalho-menu-item">
+                    <span>
+                        <img src="https://i.postimg.cc/rFjF227z/pedidos.png" alt="pedidos" width="40px" height="40px">
+                    </span>
+                    <div class="cabecalho-menu-item-hidding">
+                        <p>Pedidos</p>
+                    </div>
+                </a>
             </div>
 
             <div>
-             <a class="cabecalho-menu-item">
-                <span>
-                    <img src="https://i.postimg.cc/NF4YtRJZ/conta.png" alt="conta" width="40px" height="40px">
-                </span>
-                <div class="cabecalho-menu-item-hidding">
-                    <p>Conta</p>
-                </div>
-             </a> 
+                <a class="cabecalho-menu-item">
+                    <span>
+                        <img src="https://i.postimg.cc/NF4YtRJZ/conta.png" alt="conta" width="40px" height="40px">
+                    </span>
+                    <div class="cabecalho-menu-item-hidding">
+                        <p>Conta</p>
+                    </div>
+                </a>
             </div>
         </nav>
+        <button>
 
-          <div class="divisoria"></div>
-   </header>
+            <div class="divisoria"></div>
+    </header>
+    <main>
+    <div>
+        <!-- Parte 1: Cardápio de Yakissoba -->
+        <h1 style="text-align: center; color: #D2691E; font-family: Arial, sans-serif;">Yakissobas</h1>
+        <table id="tabela-principal"></table>
+        <br>
+        <h2 style="text-align: center; color: #8B0000; font-family: Arial, sans-serif;">Especiais</h2>
+        <table id="tabela-especiais"></table>
+    </div>
 
-   <main style="overflow-x: auto;">
+    </main>
+<script>
+    const pratos = [
+        { nome: "Tradicional", precos: { P: 35.00, M: 45.00, G: 60.00 } },
+        { nome: "Bovino", precos: { P: 35.00, M: 45.00, G: 60.00 } },
+        { nome: "Frango", precos: { P: 35.00, M: 45.00, G: 60.00 } },
+        { nome: "Lombo", precos: { P: 35.00, M: 45.00, G: 60.00 } },
+        { nome: "Misto Simples", precos: { P: 35.00, M: 45.00, G: 60.00 } },
+        { nome: "Misto com Camarões", precos: { P: 47.00, M: 55.00, G: 68.00 } },
+        { nome: "Vegetariano (shimeji)", precos: { P: 35.00, M: 45.00, G: 60.00 } },
+        { nome: "Vegano (Shimeji/Tofu)", precos: { P: 35.00, M: 45.00, G: 60.00 } },
+        { nome: "Sem Legumes", precos: { P: 38.00, M: 48.00, G: 62.00 } }
+    ];
 
-      <h1 class="titulo"> Yakisobas </h1>
-      
-         <section>
+    const especiais = [
+        { nome: "Camarão", precos: { P: 50.00, M: 68.00, G: 80.00 } },
+        { nome: "Tilápia", precos: { P: 45.00, M: 55.00, G: 68.00 } }
+    ];
 
-            <div class="box">
-               <!-- Parte 1: Cardápio de Yakissoba -->
-            <img class="fotoprato" src="https://img.freepik.com/fotos-gratis/composicao-saborosa-de-macarrao-de-alto-angulo-em-uma-mesa_23-2148803860.jpg?t=st=1746893341~exp=1746896941~hmac=8a75d58b4d939122539ac30cb95b1d4a0f9cf3c3b1baa243c40cb99de90f742b&w=740" alt="Yakisoba"  width="300px">
-               <div class="tx"> Imagem Ilustrativa </div>
-            <table>
-               <thead>
-                  <tr>
-                     <th class="tamanho"> Escolha seu tamanho </th>
-                     <th class="tamanho"> P(500G) </th>
-                     <th class="tamanho"> M(750G) </th>
-                     <th class="tamanho"> G(1kg) </th>
-                  </tr>
-               </thead>
+    let pedido = carregarPedidoDoLocalStorage();
 
-               <tbody>
-                  <tr>
-                     <td class="prato"> Tradicional </td>
-                     <td class="preco" data-nome="Yakisoba Tradicional" data-preco="35.00"> 35.00 </td>
-                     <td class="preco"data-nome="Yakisoba Tradicional" data-preco="45.00"> 45.00 </td>
-                     <td class="preco" data-nome="Yakisoba Tradicional" data-preco="60.00"> 60.00 </td>
-                  </tr>
-                  <tr>
-                     <td class="prato"> Bovino </td>
-                     <td class="preco" data-nome="Yakisoba Bovino" data-preco="35.00" > 35.00 </td>
-                     <td class="preco" data-nome="Yakisoba Bovino" data-preco="45.00" > 45.00 </td>
-                     <td class="preco" data-nome="Yakisoba Bovino" data-preco="60.00"> 60.00 </td>
-                  </tr>
-                  <tr>
-                     <td class="prato"> Frango </td>
-                     <td class="preco"> 35.00 </td>
-                     <td class="preco"> 45.00 </td>
-                     <td class="preco"> 60.00 </td>
-                  </tr>
-                  <tr>
-                     <td class="prato"> Lombo </td>
-                     <td class="preco"> 35.00 </td>
-                     <td class="preco"> 45.00 </td>
-                     <td class="preco"> 60.00 </td>
-                  </tr>
-                  <tr>
-                     <td class="prato"> Misto Simples </td>
-                     <td class="preco"> 35.00 </td>
-                     <td class="preco"> 45.00 </td>
-                     <td class="preco"> 60.00 </td>
-                  </tr>
-                  <tr>
-                     <td class="prato"> Misto com camarões</td>
-                     <td class="preco"> 47.00 </td>
-                     <td class="preco"> 55.00 </td>
-                     <td class="preco"> 68.00 </td>
-                  </tr>
-                  <tr>
-                     <td class="prato"> Vegetariano</td>
-                     <td class="preco"> 35.00 </td>
-                     <td class="preco"> 45.00 </td>
-                     <td class="preco"> 60.00 </td>
-                  </tr>
-                  <tr>
-                     <td class="prato"> Vegano </td>
-                     <td class="preco"> 35.00 </td>
-                     <td class="preco"> 45.00 </td>
-                     <td class="preco"> 60.00 </td>
-                  </tr>
-                  <tr >
-                     <td class="prato"> Sem Legumes</td>
-                     <td class="preco"> 38.00 </td>
-                     <td class="preco"> 48.00 </td>
-                     <td class="preco"> 62.00 </td>
-                  </tr>
-               </tbody>
-            </table> 
+    function carregarPedidoDoLocalStorage() {
+        return JSON.parse(localStorage.getItem('pedido')) || [];
+    }
 
-         </section>     
+    function salvarPedidoNoLocalStorage() {
+        console.log(JSON.stringify(pedido))
+        localStorage.setItem('pedido', JSON.stringify(pedido));
+    }
 
-         <section>
-            <table class="tb">
-               <thead>
-                  <tr>
-                     <th class="especiais"> Especiais </th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <tr>
-                     <td class="prato"> Camarão </td>
-                     <td class="preco2"> 50.00 </td>
-                     <td class="preco2"> 68.00 </td>
-                     <td class="preco2"> 80.00 </td>
-                  </tr>
-                  <tr>
-                     <td class="prato"> Tilápia </td>
-                     <td class="preco2"> 45.00 </td>
-                     <td class="preco2"> 55.00 </td>
-                     <td class="preco2"> 68.00 </td>
-                  </tr>
-               </tbody>
-            </table> 
+    function atualizarQuantidade(nome, tamanho, delta, isSpecial = false) {
+        const lista = isSpecial ? especiais : pratos;
+        const prato = lista.find(prato => prato.nome === nome);
 
-         </section>
-      </div>
+        if (!prato) return;
 
-   </main>
+        const index = pedido.findIndex(item => item.nome === nome && item.tamanho === tamanho);
 
+        const imagem = isSpecial
+            ? "https://i0.wp.com/canaldareceita.com.br/wp-content/uploads/2025/02/Tempura-de-Camarao.jpg?fit=1000%2C600&ssl=1"
+            : "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13";
+
+        if (index === -1) {
+            console.log(imagem)
+            pedido.push({
+                nome: nome,
+                tamanho: tamanho,
+                quantity: Math.max(delta, 0),
+                value: prato.precos[tamanho],
+                imagem: imagem
+            });
+            console.log(pedido)
+        } else {
+            pedido[index].quantity += delta;
+            if (pedido[index].quantity <= 0) {
+                pedido.splice(index, 1);
+            }
+        }
+
+        salvarPedidoNoLocalStorage();
+        renderizarTabela();
+    }
+
+    function criarLinha(prato, isSpecial = false) {
+        return `
+    <tr>
+      <td>${prato.nome}</td>
+      <td>
+        <button onclick="atualizarQuantidade('${prato.nome}', 'P', -1, ${isSpecial})">-</button>
+        <span>${pedido.find(item => item.nome === prato.nome && item.tamanho === 'P')?.quantity || 0}</span>
+        <button onclick="atualizarQuantidade('${prato.nome}', 'P', 1, ${isSpecial})">+</button>
+        <br><small>R$ ${prato.precos.P.toFixed(2)}</small>
+      </td>
+      <td>
+        <button onclick="atualizarQuantidade('${prato.nome}', 'M', -1, ${isSpecial})">-</button>
+        <span>${pedido.find(item => item.nome === prato.nome && item.tamanho === 'M')?.quantity || 0}</span>
+        <button onclick="atualizarQuantidade('${prato.nome}', 'M', 1, ${isSpecial})">+</button>
+        <br><small>R$ ${prato.precos.M.toFixed(2)}</small>
+      </td>
+      <td>
+        <button onclick="atualizarQuantidade('${prato.nome}', 'G', -1, ${isSpecial})">-</button>
+        <span>${pedido.find(item => item.nome === prato.nome && item.tamanho === 'G')?.quantity || 0}</span>
+        <button onclick="atualizarQuantidade('${prato.nome}', 'G', 1, ${isSpecial})">+</button>
+        <br><small>R$ ${prato.precos.G.toFixed(2)}</small>
+      </td>
+    </tr>
+  `;
+    }
+
+    function renderizarTabela() {
+        const tabelaPrincipal = document.getElementById('tabela-principal');
+        tabelaPrincipal.innerHTML = `
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th>P (500gr)</th>
+                <th>M (750gr)</th>
+                <th>G (1kg)</th>
+            </tr>
+            </thead>
+            <tbody>
+            ${pratos.map(prato => criarLinha(prato)).join('')}
+            </tbody>
+    `;
+
+        const tabelaEspeciais = document.getElementById('tabela-especiais');
+        tabelaEspeciais.innerHTML = `
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>P (500gr)</th>
+        <th>M (750gr)</th>
+        <th>G (1kg)</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${especiais.map(prato => criarLinha(prato, true)).join('')}
+    </tbody>
+  `;
+    }
+
+    renderizarTabela();
+</script>
+    <footer>
+        <center>
+            <h5> Se Beber não dirija!</h5>
+            <p>
+            <h6>Todos os direitos reservados</h6>
+            </p>
+        </center>
+    </footer>
 </body>
-
-        <footer>
-             <center>
-          <h5 class="sb"> Se Beber não dirija!</h5>
-             <p><h6> © Todos os direitos reservados</h6></p>
-            </center>
-        </footer>
