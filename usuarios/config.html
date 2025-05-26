@@ -76,34 +76,37 @@
     <main class="login-container">
         <form class="login-form">
             <h2 class="login-title">Login Yakisoba Taippei</h2>
-            
+
             <div class="input-box">
                 <i class='bx bxs-user'></i>
-                <input placeholder="Usuário" type="text" required>
+                <input id="usuario" placeholder="Usuário" type="text" required>
             </div>
-            
+
             <div class="input-box">
                 <i class='bx bxs-lock-alt'></i>
-                <input placeholder="Senha" type="password" required>
+                <input id="senha" placeholder="Senha" type="password" required>
             </div>
-            
+
+            <label style="font-size: 14px; display: block; margin-bottom: 10px;">
+                <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha
+            </label>
+            <br>
+
             <div class="login-options">
-                <label class="remember-me">
-                    <input type="checkbox">
-                    Lembrar minha senha
                 </label>
                 <a href="esqueci.html" class="forgot-password">Esqueci minha senha</a>
             </div>
-            
+
             <button type="submit" class="login-btn">Entrar</button>
-            
+
             <div class="register-link">
                 Não tem conta? <a href="index.html">Cadastre-se</a>
             </div>
         </form>
     </main>
+    <script src="yakijs.js" defer></script>
 </body>
 
-<script src="yakijs.js"></script>
+
 
 </html>

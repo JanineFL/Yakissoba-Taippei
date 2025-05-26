@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Área do Proprietário</title>
+  <link rel="stylesheet" href="yakiconfig.css">
+</head>
+<body>
+  <h1>Pedidos Recebidos</h1>
+  <div id="lista-pedidos">Carregando...</div>
+  <button onclick="sair()">Sair</button>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const user = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+  if (!user) {
+    alert("Você precisa estar logado para acessar esta página.");
+    window.location.href = "config.html"; // redireciona para login
+  } else {
+    console.log("Usuário logado:", user.nome);
+    // Opcional: mostrar nome
+    const saudacao = document.createElement("p");
+    saudacao.textContent = `Olá, ${user.nome}!`;
+    document.body.prepend(saudacao);
+  }
+});
+
+</script>
+  <script src="proprietario.js" defer></script>
+
+</body>
+</html>

@@ -1,45 +1,69 @@
-app.post('/registrar', (req, res) => {
-  const novoUsuario = req.body;
-  const dbPath = path.join(__dirname, 'banco-de-dados', 'db.json');
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("yakijs.js carregado");
 
-  fs.readFile(dbPath, 'utf-8', (err, data) => {
-    if (err) {
-      console.error("Erro ao ler o banco:", err);
-      return res.status(500).json({ erro: 'Erro ao acessar o banco de dados.' });
+  const form = document.querySelector(".login-form");
+  const lembrar = document.getElementById("lembrar");
+  const inputUsuario = form.querySelector("input[placeholder='Usuário']");
+  const inputSenha = form.querySelector("input[placeholder='Senha']");
+
+  // Preenche usuário salvo, se existir
+  const salvo = localStorage.getItem("usuarioLembrado");
+  if (salvo) {
+    inputUsuario.value = salvo;
+    lembrar.checked = true;
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const usuario = inputUsuario.value.trim();
+    const senha = inputSenha.value.trim();
+
+    if (!usuario || !senha) {
+      alert("Por favor, preencha todos os campos.");
+      return;
     }
 
-    let usuarios = [];
-    try {
-      usuarios = JSON.parse(data);
-    } catch {
-      usuarios = [];
+    // Salva ou remove só o nome do usuário
+    if (lembrar.checked) {
+      localStorage.setItem("usuarioLembrado", usuario);
+    } else {
+      localStorage.removeItem("usuarioLembrado");
     }
 
-    // Verifica se o usuário já existe (por nome ou email)
-    const existe = usuarios.find(u =>
-      u.email === novoUsuario.email ||
-      u.nome.toLowerCase() === novoUsuario.nome.toLowerCase()
-    );
+    // Envia para o servidor
+    fetch("/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ usuario, senha })
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.sucesso) {
+          alert("Login bem-sucedido!");
+          const tipo = usuario.toLowerCase() === "proprietario" ? "proprietario" : "cliente";
+          localStorage.setItem("usuarioLogado", JSON.stringify({ nome: usuario, tipo }));
 
-    if (existe) {
-      console.log("Tentativa de cadastro duplicado:", novoUsuario);
-      return res.status(400).json({ erro: 'Cadastro já existe. Faça login.' });
-    }
 
-    // Adiciona novo usuário
-    usuarios.push(novoUsuario);
-    console.log("Usuário a ser salvo:", novoUsuario);
-
-    fs.writeFile(dbPath, JSON.stringify(usuarios, null, 2), err => {
-      if (err) {
-        console.error("Erro ao salvar:", err);
-        return res.status(500).json({ erro: 'Erro ao salvar o usuário.' });
-      }
-
-      console.log("Usuário salvo com sucesso!");
-      res.status(201).json({ mensagem: 'Usuário registrado com sucesso!' });
-    });
+          window.location.href = "home.html";
+        } else {
+          alert("❌ " + (data.mensagem || "Usuário ou senha incorretos."));
+        }
+      })
+      .catch(err => {
+        console.error("Erro ao conectar:", err);
+        alert("Erro ao conectar com o servidor.");
+      });
   });
 });
+function mostrarSenha() {
+  const input = document.getElementById("senha");
+  input.type = input.type === "password" ? "text" : "password";
+}
+
+
+
+
+
 
 

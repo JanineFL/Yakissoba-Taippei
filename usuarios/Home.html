@@ -94,6 +94,48 @@
         <h6>Todos os direitos reservados</h6>
     </center>
 </footer>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+  const user = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+  if (!user) {
+    alert("Você precisa estar logado para acessar esta página.");
+    window.location.href = "config.html"; // redireciona para login
+  } else {
+    console.log("Usuário logado:", user.nome);
+    // Opcional: mostrar nome
+    const saudacao = document.createElement("p");
+    saudacao.textContent = `Olá, ${user.nome}!`;
+    document.body.prepend(saudacao);
+  }
+});
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    if (!usuario) {
+      alert("Você precisa estar logado para acessar esta página.");
+      window.location.href = "config.html";
+      return;
+    }
+
+    const saudacao = document.createElement("div");
+    saudacao.innerHTML = `
+      <p style="text-align:right; padding: 10px;">
+        Olá, <strong>${usuario.nome}</strong>!
+        <button onclick="sair()" style="margin-left: 10px;">Sair</button>
+      </p>
+    `;
+    document.body.prepend(saudacao);
+  });
+
+  function sair() {
+    localStorage.removeItem("usuarioLogado");
+    window.location.href = "config.html";
+  }
+</script>
+
+
 <script src="script.js"> </script>
 </body>
 </html>

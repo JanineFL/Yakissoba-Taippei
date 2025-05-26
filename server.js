@@ -1,14 +1,16 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const nodemailer = require('nodemailer');
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 
-// Serve arquivos da pasta "usuarios"
+
 app.use(express.static(path.join(__dirname, 'usuarios')));
+
 
 // Rota principal
 app.get('/', (req, res) => {
@@ -65,18 +67,13 @@ app.post('/login', (req, res) => {
     if (encontrado) {
       res.status(200).json({ sucesso: true, mensagem: 'Login bem-sucedido!' });
     } else {
-      res.status(401).json({ sucesso: false, mensagem: 'Nome ou senha inválidos' });
+      res.status(401).json({ sucesso: false, mensagem: 'Usuário não encontrado ou senha incorreta.' });
+
     }
   });
 });
 
-// Inicia o servidor
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
-
-const nodemailer = require('nodemailer');
-
+// Rota de recuperação de senha
 app.post('/esqueci-senha', (req, res) => {
   const { email } = req.body;
   const dbPath = path.join(__dirname, 'banco-de-dados', 'db.json');
@@ -106,7 +103,7 @@ app.post('/esqueci-senha', (req, res) => {
         service: 'gmail',
         auth: {
           user: 'yakisobasuporte0@gmail.com',
-          pass: 'aozk slsx vyih hoiq' // senha de app, gerada no Google
+          pass: 'aozk slsx vyih hoiq'
         }
       });
 
@@ -129,3 +126,37 @@ app.post('/esqueci-senha', (req, res) => {
     });
   });
 });
+
+// Inicia o servidor
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
+});
+// Rota para buscar pedidos
+app.get('/pedidos', (req, res) => {
+  const pathPedidos = path.join(__dirname, 'banco-de-dados', 'pedidos.json');
+  fs.readFile(pathPedidos, 'utf8', (err, data) => {
+    if (err) return res.status(500).json({ erro: 'Erro ao ler pedidos.' });
+    res.json(JSON.parse(data));
+  });
+});
+
+// Rota para marcar pedido como enviado
+app.post('/pedidos/enviar/:id', (req, res) => {
+  const pathPedidos = path.join(__dirname, 'banco-de-dados', 'pedidos.json');
+  fs.readFile(pathPedidos, 'utf8', (err, data) => {
+    if (err) return res.status(500).json({ erro: 'Erro ao acessar pedidos.' });
+
+    const pedidos = JSON.parse(data);
+    const id = parseInt(req.params.id);
+
+    if (!pedidos[id]) return res.status(404).json({ erro: 'Pedido não encontrado.' });
+
+    pedidos[id].status = "Enviado para maquininha";
+
+    fs.writeFile(pathPedidos, JSON.stringify(pedidos, null, 2), err => {
+      if (err) return res.status(500).json({ erro: 'Erro ao salvar alteração.' });
+      res.json({ mensagem: 'Pedido enviado com sucesso!' });
+    });
+  });
+});
+

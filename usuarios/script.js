@@ -36,4 +36,19 @@ function cadastrar() {
       alert("Erro de conexão com o servidor.");
     });
 }
+fetch("/login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ usuario, senha })
+})
+  .then(res => res.json())
+  .then(data => {
+    if (data.sucesso) {
+      localStorage.setItem("usuarioLogado", JSON.stringify({ nome: usuario }));
+      window.location.href = "home.html"; // ⬅️ redireciona pra home.html
+    } else {
+      alert(data.mensagem);
+    }
+  });
+
 
