@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Bahiana&family=Dongle&family=Playwrite+DE+Grund:wght@100..400&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color: #fbf8ee;
+
+}
+
+
+html {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+.cabecalho-imagem {
+    display: block;
+    margin: auto;
+    justify-content: center;
+}
+
+.divisoria {
+  border-top: 10px double #f7bf18;
+  margin: 30px 40px;
+  border-radius: 60px;
+}
+
+.cabecalho-menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: left;
+    gap: 5px;
+    position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 250px;
+  width: 40px;
+}
+
+.cabecalho-menu-item {
+    position: relative;
+    display: inline-flex;
+}
+
+.cabecalho-menu-item:hover{
+    transform: translate(-5px, -5px);
+    transition-delay: 200ms;
+}
+
+.cabecalho-menu-item-hidding {
+    display: none;
+    position:fixed;
+    min-width: 110px;
+    min-height: 23px;
+    background-color: #f7bf1854;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+        font-family: "Quicksand", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        font-style: normal;
+        transition-timing-function: ease-in 20s;
+}
+
+.cabecalho-menu-item:hover .cabecalho-menu-item-hidding {
+    display:block;
+    opacity: 2;
+    block-size: auto;
+    position: absolute;
+    justify-content:center;
+    bottom: 15px;
+    right: 39px; 
+    transition: 1s ease;
+
+}
+
+footer {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: #fbf8ee;
+    padding: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 1500px;
+  height: 150px;
+  border-radius: 1px;
+  background-color: black;
+  padding: 1em;
+  margin: auto;
+  line-height: 40px;
+}
+
+
+.cardapio {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+}
+
+.imagem img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.tabela-container {
+  margin-left: 20px;
+  flex: 1;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #000;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+button {
+  background-color: gold;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.especiais-titulo {
+  background-color: black;
+  color: gold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: gold;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 2px;
+}
+
+td span {
+  margin: 0 5px;
+  font-weight: bold;
+  display: inline-block;
+  width: 20px;
+}
+
+small {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #555;
+}

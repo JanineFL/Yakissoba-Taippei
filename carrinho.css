@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Bahiana&family=Dongle&family=Playwrite+DE+Grund:wght@100..400&family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;
+    background-color: #fbf8ee;
+}
+
+html {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.cabecalho-imagem {
+    display: block;
+    margin: auto;
+    justify-content: center;
+}
+
+.divisoria {
+    border-top: 10px double #f7bf18;
+    margin: 30px 40px;
+    border-radius: 60px;
+}
+
+.cabecalho-menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: left;
+    gap: 5px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 250px;
+    width: 40px;
+}
+
+.cabecalho-menu-item {
+    position: relative;
+    display: inline-flex;
+}
+
+.cabecalho-menu-item:hover {
+    transform: translate(-5px, -5px);
+    transition-delay: 200ms;
+}
+
+.cabecalho-menu-item-hidding {
+    display: none;
+    position: fixed;
+    min-width: 110px;
+    min-height: 23px;
+    background-color: #f7bf1854;
+    width: 150px;
+    height: 50px;
+    padding: 0.3rem;
+    border-radius: 50px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    transition-timing-function: ease-in 20s;
+}
+
+.cabecalho-menu-item:hover .cabecalho-menu-item-hidding {
+    display: block;
+    opacity: 2;
+    block-size: auto;
+    position: absolute;
+    justify-content: center;
+    bottom: 15px;
+    right: 39px;
+    transition: 1s ease;
+
+}
+
+.carrinho {
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 10px;
+}
+.item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 15px;
+    object-fit: cover;
+}
+.item .left-item{
+    display: flex;
+    height: 150px;
+    align-items: center;
+    flex-direction: row;
+    width: 200px;
+
+}
+.item .right-item{
+    display: flex;
+    height: 150px;
+    align-items: center;
+    flex-direction: column;
+    width: 200px;
+}
+.item .right-item .preco{
+    font-size: 25px;
+}
+
+.item .right-item .quantidade{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f7bf18;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 20px;
+    height: 40px;
+}
+.item .right-item .quantidade button{
+    background: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+.detalhes {
+    flex: 1;
+}
+
+.titulo {
+    color: #ffc107;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.descricao {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.quantidade {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.quantidade button {
+    background: #ffc107;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.preco {
+    text-align: right;
+    font-weight: bold;
+}
+
+.resumo {
+    margin-top: 20px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.total {
+    background: #ffc107;
+    color: #000;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.avaliar {
+    background: #000;
+    border: 2px solid #ffc107;
+    color: #ffc107;
+    padding: 10px;
+    width: 100%;
+    border-radius: 30px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    letter-spacing: 3px;
+}
+
+
+footer {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;
+    color: #fbf8ee;
+    padding: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 1500px;
+    height: 150px;
+    border-radius: 1px;
+    background-color: black;
+    padding: 1em;
+    margin: auto;
+    line-height: 40px;
+}
+.buttonRemoveDiv{
+    display: flex;
+    width: 100%;
+    justify-content: right;
+}
+.btnRemover {
+    position: relative;
+    margin: 10px;
+    align-self: right;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carrinho-vazio {
+    text-align: center;
+    font-size: 30px;
+    color: #ffc107;
+    margin-top: 20px;
+}
+
+.btnRemover::before {
+    content: "x";
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.btnRemover:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+}
+
+.btnRemover:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .carrinho {
+        width: 100%;
+        align-items: center;
+    }
+
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .item img {
+        margin-bottom: 10px;
+    }
+
+    .quantidade {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
