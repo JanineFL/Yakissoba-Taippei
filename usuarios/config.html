@@ -14,8 +14,8 @@
             <nav class="cabecalho-menu"> 
             
             <div class="cabecalho-menu-item">
-             <a> 
-               <span >
+             <a href="#">
+               <span>
                  <img src="https://i.postimg.cc/NMKr5jqN/home.png" alt="home" width="40px" height="40px">
                 </span>
                 <div class="cabecalho-menu-item-hidding">
@@ -25,9 +25,9 @@
             </div>
 
             <div>
-             <a class="cabecalho-menu-item">
+             <a class="cabecalho-menu-item" href="cardapio.html">
                 <span>
-                  <img src="https://i.postimg.cc/xTDb1QsR/cardapio.png" alt="cardápio" wwidth="40px" height="40px" onclick="window.location.href='cardapio.html'">
+                  <img src="https://i.postimg.cc/xTDb1QsR/cardapio.png" alt="cardápio" width="40px" height="40px">
                 </span>
                 <div class="cabecalho-menu-item-hidding">
                 <p>Cardápio</p>
@@ -36,7 +36,7 @@
             </div>
 
             <div>
-             <a class="cabecalho-menu-item">
+             <a class="cabecalho-menu-item" href="#">
                 <span>
                     <img src="https://i.postimg.cc/L8vqD1mC/carrinho.png" alt="carrinho" width="40px" height="40px">
                 </span>
@@ -47,7 +47,7 @@
             </div>
 
             <div>
-             <a class="cabecalho-menu-item">
+             <a class="cabecalho-menu-item" href="#">
                 <span>
                    <img src="https://i.postimg.cc/rFjF227z/pedidos.png" alt="pedidos" width="40px" height="40px"> 
                 </span>
@@ -58,7 +58,7 @@
             </div>
 
             <div>
-             <a class="cabecalho-menu-item">
+             <a class="cabecalho-menu-item" href="#">
                 <span>
                     <img src="https://i.postimg.cc/NF4YtRJZ/conta.png" alt="conta" width="40px" height="40px">
                 </span>
@@ -84,11 +84,11 @@
 
             <div class="input-box">
                 <i class='bx bxs-lock-alt'></i>
-                <input id="senha" placeholder="Senha" type="password" required>
+                <input type="password" id="senha" placeholder="Digite sua senha">
             </div>
 
-            <label style="font-size: 14px; display: block; margin-bottom: 10px;">
-                <input type="checkbox" onclick="mostrarSenha()"> Mostrar senha
+            <label for="lembrar" style="font-size: 14px; display: block; margin-bottom: 10px;">
+                <input type="checkbox" id="lembrar" onclick="mostrarSenha()"> Mostrar senha
             </label>
             <br>
 
@@ -105,6 +105,16 @@
         </form>
     </main>
     <script src="yakijs.js" defer></script>
+    <script>
+        function mostrarSenha() {
+            const campoSenha = document.getElementById("senha");
+            if (campoSenha.type === "password") {
+                campoSenha.type = "text";
+            } else {
+                campoSenha.type = "password";
+            }
+        }
+    </script>
 </body>
 
 

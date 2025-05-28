@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pedidos do Restaurante</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fffbe6;
+      padding: 20px;
+    }
+    h1 {
+      color: #cc0000;
+    }
+    .pedido {
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Pedidos</h1>
+  <div id="listaPedidos">Carregando pedidos...</div>
+
+  <script>
+    fetch('/pedidos')
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("listaPedidos");
+        if (!data.length) {
+          container.innerHTML = "<p>Nenhum pedido encontrado.</p>";
+          return;
+        }
+
+        container.innerHTML = data.map((pedido, index) => `
+          <div class="pedido">
+            <strong>Pedido #${index + 1}</strong><br>
+            ${Object.entries(pedido).map(([chave, valor]) => `<strong>${chave}:</strong> ${valor}<br>`).join('')}
+          </div>
+        `).join('');
+      })
+      .catch(err => {
+        document.getElementById("listaPedidos").innerHTML = "Erro ao carregar pedidos.";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>

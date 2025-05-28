@@ -73,6 +73,11 @@
 
         <div class="carrinho" id="carrinho"></div>
 
+        <div style="text-align: center; margin-top: 20px;">
+              <button onclick="finalizarPedido()" style="padding: 10px 20px;">Finalizar Pedido</button>
+        </div>
+
+
     <footer>
         <center>
             <h5> Se Beber não dirija!</h5>
@@ -80,6 +85,7 @@
             <h6>Todos os direitos reservados</h6>
             </p>
         </center>
+        <section id="meus-pedidos"></section>
     </footer>
 <script>
 const taxaEntrega = 10.00;
@@ -107,18 +113,18 @@ function renderCarrinho() {
         <div class="left-item">
             <img src="${item.imagem}" alt="${item.nome}">
             <div class="detalhes">
-            <div class="titulo">${item.nome}</div>
-            <p>Tamanho ${item.tamanho}</p>
-        </div>
+              <div class="titulo">${item.nome}</div>
+              <p>Tamanho ${item.tamanho}</p>
+            </div>
         </div>
         <div class="right-item">
             <div class="buttonRemoveDiv"><button class="btnRemover" onclick="removerItem(${index})"></button></div>
             <div class="quantidade">
-            Quantidade
-            <button class="btnQtd" onclick="alterarQtd(${index}, -1)">-</button>
-            ${item.quantity.toString().padStart(2, '0')}
-            <button class="btnQtd" onclick="alterarQtd(${index}, 1)">+</button>
-          </div>
+              Quantidade
+              <button class="btnQtd" onclick="alterarQtd(${index}, -1)">-</button>
+              ${item.quantity.toString().padStart(2, '0')}
+              <button class="btnQtd" onclick="alterarQtd(${index}, 1)">+</button>
+            </div>
             <div class="preco">R$ ${subtotal.toFixed(2)}</div>
         </div>
       </div>
@@ -138,6 +144,7 @@ function renderCarrinho() {
 
   document.getElementById("carrinho").innerHTML = html;
 }
+
 function alterarQtd(index, delta) {
   if (carrinhoItens[index].quantity == 0 && delta == -1) {
     carrinhoItens[index].quantity = 0;
@@ -160,8 +167,40 @@ function removerItem(index) {
   renderCarrinho(); 
 }
 
+function finalizarPedido() {
+  if (carrinhoItens.length === 0) {
+    alert("Seu carrinho está vazio!");
+    return;
+  }
+
+  const pedido = {
+    usuario: "Usuario1", // você pode puxar do localStorage se tiver login
+    items: carrinhoItens,
+    total: carrinhoItens.reduce((total, item) => total + (item.value * item.quantity), taxaEntrega)
+  };
+
+  fetch('/adicionar-pedido', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(pedido)
+  })
+  .then(response => response.text())
+  .then(data => {
+    alert("Pedido enviado com sucesso!");
+    localStorage.removeItem("pedido");
+    location.reload();
+  })
+  .catch(err => {
+    console.error("Erro ao enviar pedido:", err);
+    alert("Erro ao enviar pedido.");
+  });
+}
+
 renderCarrinho();
 </script>
+
 
 </body>
 

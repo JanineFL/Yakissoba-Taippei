@@ -1,1 +1,158 @@
-[]
+[
+  {
+    "usuario": "Usuario1",
+    "items": [
+      {
+        "nome": "Yakissoba",
+        "quantidade": 2,
+        "value": 25
+      }
+    ],
+    "total": 50,
+    "status": "Pendente"
+  },
+  {
+    "usuario": "Usuario1",
+    "items": [
+      {
+        "nome": "Bovino",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 45,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Frango",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 45,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Sem Legumes",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 48,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Tilápia",
+        "tamanho": "M",
+        "quantity": 2,
+        "value": 55,
+        "imagem": "https://i0.wp.com/canaldareceita.com.br/wp-content/uploads/2025/02/Tempura-de-Camarao.jpg?fit=1000%2C600&ssl=1"
+      },
+      {
+        "nome": "Tradicional",
+        "tamanho": "G",
+        "quantity": 2,
+        "value": 60,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      }
+    ],
+    "total": 378
+  },
+  {
+    "usuario": "Usuario1",
+    "items": [
+      {
+        "nome": "Misto com Camarões",
+        "tamanho": "P",
+        "quantity": 1,
+        "value": 47,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Misto com Camarões",
+        "tamanho": "G",
+        "quantity": 1,
+        "value": 68,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Tilápia",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 55,
+        "imagem": "https://i0.wp.com/canaldareceita.com.br/wp-content/uploads/2025/02/Tempura-de-Camarao.jpg?fit=1000%2C600&ssl=1"
+      },
+      {
+        "nome": "Tradicional",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 45,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Misto Simples",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 45,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Frango",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 45,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Vegetariano (shimeji)",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 45,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Vegano (Shimeji/Tofu)",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 45,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Sem Legumes",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 48,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      }
+    ],
+    "total": 453
+  },
+  {
+    "usuario": "Usuario1",
+    "items": [
+      {
+        "nome": "Frango",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 45,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Bovino",
+        "tamanho": "P",
+        "quantity": 1,
+        "value": 35,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      },
+      {
+        "nome": "Tilápia",
+        "tamanho": "M",
+        "quantity": 1,
+        "value": 55,
+        "imagem": "https://i0.wp.com/canaldareceita.com.br/wp-content/uploads/2025/02/Tempura-de-Camarao.jpg?fit=1000%2C600&ssl=1"
+      },
+      {
+        "nome": "Frango",
+        "tamanho": "P",
+        "quantity": 1,
+        "value": 35,
+        "imagem": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRb8JlHnYohMCXkpyKXCT7EDx4jzcvM5XnWPcYyvgg1l-mjNO13"
+      }
+    ],
+    "total": 180
+  }
+]

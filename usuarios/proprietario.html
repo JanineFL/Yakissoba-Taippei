@@ -6,27 +6,89 @@
   <link rel="stylesheet" href="yakiconfig.css">
 </head>
 <body>
-  <h1>Pedidos Recebidos</h1>
+  <h1>Pedidos Recebidos (Carrinho)</h1>
   <div id="lista-pedidos">Carregando...</div>
   <button onclick="sair()">Sair</button>
-<script>
-window.addEventListener("DOMContentLoaded", () => {
-  const user = JSON.parse(localStorage.getItem("usuarioLogado"));
+  <section id="lista-pedidos"></section>
+  <button onclick="enviarParaMaquininha()">Enviar para maquininha</button>
 
-  if (!user) {
-    alert("Você precisa estar logado para acessar esta página.");
-    window.location.href = "config.html"; // redireciona para login
-  } else {
-    console.log("Usuário logado:", user.nome);
-    // Opcional: mostrar nome
-    const saudacao = document.createElement("p");
-    saudacao.textContent = `Olá, ${user.nome}!`;
-    document.body.prepend(saudacao);
-  }
-});
 
-</script>
-  <script src="proprietario.js" defer></script>
+  <script>
+    // Verifica se o usuário está logado
+    window.addEventListener("DOMContentLoaded", () => {
+      const user = JSON.parse(localStorage.getItem("usuarioLogado"));
 
+      if (!user) {
+        alert("Você precisa estar logado para acessar esta página.");
+        window.location.href = "config.html"; // redireciona para login
+      } else {
+        console.log("Usuário logado:", user.nome);
+        // Opcional: mostrar nome
+        const saudacao = document.createElement("p");
+        saudacao.textContent = `Olá, ${user.nome}!`;
+        document.body.prepend(saudacao);
+      }
+
+      // Carregar pedidos (carrinho)
+      carregarPedidos();
+    });
+
+    // Função para carregar os pedidos (carrinho)
+    function carregarPedidos() {
+      fetch('/pedidos') // Requisição GET para a rota /pedidos
+        .then(response => response.json()) // Converte a resposta para JSON
+        .then(pedidos => {
+          const listaPedidos = document.getElementById('lista-pedidos');
+          listaPedidos.innerHTML = ''; // Limpa a área de pedidos
+
+          // Se não houver pedidos
+          if (pedidos.length === 0) {
+            listaPedidos.innerHTML = '<p>Não há pedidos no momento.</p>';
+            return;
+          }
+
+          // Exibe os pedidos
+          pedidos.forEach((pedido, index) => {
+            const pedidoElement = document.createElement('div');
+            pedidoElement.classList.add('pedido');
+            pedidoElement.innerHTML = `
+              <p><strong>Pedido #${index + 1}</strong></p>
+              <p><strong>Item:</strong> ${pedido.item}</p>
+              <p><strong>Quantidade:</strong> ${pedido.quantidade}</p>
+              <p><strong>Status:</strong> ${pedido.status || 'Pendente'}</p>
+              <button onclick="enviarPedido(${index})">Marcar como Enviado</button>
+              <hr>
+            `;
+            listaPedidos.appendChild(pedidoElement);
+          });
+        })
+        .catch(error => {
+          console.error("Erro ao carregar os pedidos:", error);
+          alert("Houve um erro ao carregar os pedidos.");
+        });
+    }
+
+    // Função para marcar o pedido como enviado
+    function enviarPedido(id) {
+      fetch(`/pedidos/enviar/${id}`, {
+        method: 'POST'
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.mensagem); // Exibe a mensagem de sucesso
+        carregarPedidos(); // Recarrega a lista de pedidos após a atualização
+      })
+      .catch(error => {
+        console.error("Erro ao marcar o pedido como enviado:", error);
+        alert("Houve um erro ao atualizar o status do pedido.");
+      });
+    }
+
+    // Função para logout
+    function sair() {
+      localStorage.removeItem('usuarioLogado'); // Remove o usuário do localStorage
+      window.location.href = "config.html"; // Redireciona para a página de login
+    }
+  </script>
 </body>
 </html>

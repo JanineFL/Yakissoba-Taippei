@@ -63,3 +63,21 @@ function sair() {
   localStorage.removeItem("usuarioLogado");
   window.location.href = "config.html";
 }
+fetch("/todos-pedidos")
+  .then(res => res.json())
+  .then(pedidos => {
+    const container = document.getElementById("lista-pedidos");
+    pedidos.forEach(p => {
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <p><strong>${p.usuario.nome}</strong> — R$ ${p.total.toFixed(2)} — ${p.data}</p>
+        <ul>${p.itens.map(i => `<li>${i.nome} x${i.quantidade}</li>`).join('')}</ul>
+        <hr>`;
+      container.appendChild(div);
+    });
+  });
+
+function enviarParaMaquininha() {
+  alert("✅ Pedido enviado para a maquininha (simulado)");
+}
+
