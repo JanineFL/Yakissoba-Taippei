@@ -219,3 +219,34 @@ margin-bottom: 5px;
     font-weight: 200;
     margin-bottom: 10px;
 }
+
+
+table {
+    width: 90%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    font-family: "Quicksand", sans-serif;
+    background-color: #fbf8ee;
+}
+
+thead th {
+    background-color: #f7bf18;
+    color: #000;
+    font-size: 18px;
+    padding: 0.5rem 1rem;
+    border: 2px solid #000;
+    text-align: center;
+    font-weight: 600;
+}
+
+tbody td {
+    font-size: 16px;
+    padding: 0.5rem 0.8rem;
+    text-align: center;
+    border: 1px solid #000;
+    color: #1A1A1A;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f6ed;
+}
