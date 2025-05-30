@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Bahiana&family=Dongle&family=Playwrite+DE+Grund:wght@100..400&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Bahiana&display=swap');
 
 * {
     margin: 0;
@@ -94,159 +95,80 @@ main {
     text-align: left;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Bahiana&display=swap');
+
+/* CONTAINER DO CARDÁPIO */
 .cardapio {
-    zoom: 0.9;
-    display: flex;
-    flex-direction: column;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 10px;
+    margin: 2rem auto;
+    text-align: left;
+    max-width: 1200px;
+    padding: 0 1rem;
 }
 
-.titulo {
-    font-family: "Bahiana", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 50px;
-    writing-mode: vertical-lr;
-    letter-spacing: 1em;
-    color: white;
-    padding: 0.5rem 1rem;
-    text-align: center; 
-    background-color: black;
-    display: flex;
-    text-align: center;
-}
-
+/* BOX PADRÃO */
 .box {
     padding: 20px;
-  margin: 10px 10px;
-  display: inline;
-  width: 600px;
+    margin: 20px auto;
+    width: 600px;
+    background-color: #fbf8ee;
+    border: 2px solid #f7bf18;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    clear: both;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* IMAGEM */
 .fotoprato {
     float: left;
-    width: 250px;
-    border-radius: 2px;
-    padding: 0.2em;
+    width: 180px;
+    border-radius: 8px;
+    margin: 0 15px 15px 0;
+    object-fit: cover;
 }
 
+/* TÍTULO */
 .prato {
-  font-family: "Bahiana", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 55px;
+    font-family: "Bahiana", cursive;
+    font-size: 30px;
     color: #f7bf18;
-    padding: 0.5rem 0.5rem;
-    text-align: center;
+    margin-bottom: 15px;
 }
 
-.pratos {
-  font-family: "Bahiana", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 35px;
-    color: #f7bf18;
-    padding: 0.4rem;
-    display: flex;
-}
-
-.descricao {
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 16px;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
+/* BLOCO PRETO (vai) */
 .vai {
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
-    color: white;
-    background-color: black;
-    padding: 0.5rem;
-    display: flex;
-    text-align: left;
-    text-wrap: wrap;
-    flex-direction: row;
-}
-
-.sabor {
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 20px;
-    padding: 0.2rem;
-    display: flex;
-}
-
-footer {
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 20px;
-    color: #fbf8ee;
-    padding: 0.2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    width: 1500px;
-height: 100px;
-border-radius: 1px;
-background-color: black;
-padding: 1em;
-margin: auto;
-line-height: 30px;
-margin-bottom: 5px;
-}
-
-.sb {
-    font-family: "Bahiana", sans-serif;
-    color: #f7bf18;
-    letter-spacing: 10px;
-    font-size: 20px;
-    font-weight: 200;
-    margin-bottom: 10px;
-}
-
-
-table {
-    width: 90%;
-    margin: 2rem auto;
-    border-collapse: collapse;
-    font-family: "Quicksand", sans-serif;
-    background-color: #fbf8ee;
-}
-
-thead th {
-    background-color: #f7bf18;
-    color: #000;
-    font-size: 18px;
-    padding: 0.5rem 1rem;
-    border: 2px solid #000;
-    text-align: center;
-    font-weight: 600;
-}
-
-tbody td {
+    font-family: "Poppins", sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 16px;
     font-size: 16px;
-    padding: 0.5rem 0.8rem;
-    text-align: center;
-    border: 1px solid #000;
-    color: #1A1A1A;
+    line-height: 1.6;
+    border-radius: 6px;
+    margin: 15px 0;
+    display: inline-block;
+    width: calc(100% - 200px); /* garante que não passe por cima da imagem */
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f9f6ed;
+/* SUBTÍTULO */
+.pratos {
+    font-family: "Bahiana", cursive;
+    font-size: 22px;
+    color: #f7bf18;
+    margin: 15px 0 8px 0;
+    clear: both;
+}
+
+/* DESCRIÇÃO (itens e preços) */
+.descricao {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+    margin-top: 10px;
 }
